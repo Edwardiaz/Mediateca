@@ -125,6 +125,16 @@ public class Dashboard extends javax.swing.JFrame {
         jButton9.setForeground(new java.awt.Color(51, 0, 153));
         jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-buscar.png"))); // NOI18N
         jButton9.setText("Buscar material");
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                BtnBuscarMousePressed(evt);
+            }
+        });
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
         pnlMenu.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 180, 49));
 
         btnAgregar.setBackground(new java.awt.Color(255, 255, 255));
@@ -232,6 +242,21 @@ public class Dashboard extends javax.swing.JFrame {
             Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnBorrarActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void BtnBuscarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnBuscarMousePressed
+        try {
+            ConsultarMateriales consulta = new ConsultarMateriales();
+            consulta.setVisible(true);
+            this.dispose();
+        } catch (SQLException ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_BtnBuscarMousePressed
 
     /**
      * @param args the command line arguments
