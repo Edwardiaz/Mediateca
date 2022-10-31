@@ -80,6 +80,11 @@ public class Dashboard extends javax.swing.JFrame {
                 btnActualizarMousePressed(evt);
             }
         });
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarActionPerformed(evt);
+            }
+        });
         pnlMenu.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 180, 49));
 
         btnMostrar.setBackground(new java.awt.Color(255, 255, 255));
@@ -90,6 +95,11 @@ public class Dashboard extends javax.swing.JFrame {
         btnMostrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnMostrarMousePressed(evt);
+            }
+        });
+        btnMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostrarActionPerformed(evt);
             }
         });
         pnlMenu.add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 180, 49));
@@ -232,6 +242,14 @@ public class Dashboard extends javax.swing.JFrame {
             Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnBorrarActionPerformed
+
+    private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMostrarActionPerformed
+
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnActualizarActionPerformed
 
     /**
      * @param args the command line arguments

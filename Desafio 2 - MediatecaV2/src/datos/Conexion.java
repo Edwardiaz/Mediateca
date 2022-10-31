@@ -21,7 +21,7 @@ public class Conexion {
     //El puerto es opcional
     private static String JDBC_URL = "jdbc:mysql://localhost:3306/mediateca?useSSL=false";
     private static String JDBC_USER = "root";
-    private static String JDBC_PASS = "";
+    private static String JDBC_PASS = "Trends100";
     private static Driver driver = null;
     
     public static synchronized Connection getConnection() throws SQLException { 
