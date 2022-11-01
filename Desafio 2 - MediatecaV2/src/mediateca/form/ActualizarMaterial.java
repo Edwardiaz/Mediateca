@@ -16,13 +16,13 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author user
  */
-public class BorrarMaterial extends javax.swing.JFrame {
+public class ActualizarMaterial extends javax.swing.JFrame {
 
 
     Conexion conn = new Conexion();
     Connection con = conn.getConnection();
     
-    public BorrarMaterial() throws SQLException {
+    public ActualizarMaterial() throws SQLException {
         initComponents();
         
         mostrarMaterial();
@@ -162,7 +162,7 @@ public class BorrarMaterial extends javax.swing.JFrame {
             
             String list[][] = new String[count][9];
             int i = 0;
-            ResultSet re = ps.executeQuery("SELECT materiales.id, materiales.titulo, autores.nombre_autor, materiales.numero_de_paginas, editoriales.nombre_editorial AS Editorial, materiales.isbn, materiales.fecha_publicacion, materiales.unidades_disponibles, tipo_material.tipo_material AS Tipo from materiales LEFT JOIN autores on autores.id = materiales.codigo_autor LEFT JOIN editoriales ON editoriales.id = materiales.codigo_editorial LEFT JOIN tipo_material ON tipo_material.id = materiales.codigo_tipo_material where codigo_tipo_material=4");
+            ResultSet re = ps.executeQuery("SELECT materiales.id, materiales.titulo, autores.nombre_autor, materiales.numero_de_paginas, editoriales.nombre_editorial AS Editorial, materiales.isbn, materiales.fecha_publicacion, materiales.unidades_disponibles, tipo_material.tipo_material AS Tipo from materiales LEFT JOIN autores on autores.id = materiales.codigo_autor LEFT JOIN editoriales ON editoriales.id = materiales.codigo_editorial LEFT JOIN tipo_material ON tipo_material.id = materiales.codigo_tipo_material");
             while(re.next()){
                 list[i][0] = re.getString("id");
                 list[i][1] = re.getString("titulo");
@@ -211,7 +211,7 @@ public class BorrarMaterial extends javax.swing.JFrame {
         
             //materiales.id, materiales.titulo, autores.nombre_autor as Autor, materiales.numero_de_paginas, editoriales.nombre_editorial AS Editorial, materiales.isbn, materiales.fecha_publicacion, materiales.unidades_disponibles, tipo_material.tipo_material AS Tipo from materiales LEFT JOIN autores on autores.id = materiales.codigo_autor LEFT JOIN editoriales ON editoriales.id = materiales.codigo_editorial LEFT JOIN tipo_material ON tipo_material.id = materiales.codigo_tipo_material
             try {
-                PreparedStatement ps = con.prepareStatement("UPDATE autores SET nombre_autor='"+autor+"' WHERE id LIKE '"+id+"' ");
+                PreparedStatement ps = con.prepareStatement("UPDATE autores SET nombre_autor='"+autor+"' WHERE id = '"+id+"' ");
                 ps.executeUpdate();
                     try {
                         PreparedStatement ps2 = con.prepareStatement("UPDATE editoriales SET nombre_editorial='"+editorial+"' WHERE id='"+id+"'");
@@ -251,21 +251,22 @@ public class BorrarMaterial extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BorrarMaterial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ActualizarMaterial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BorrarMaterial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ActualizarMaterial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BorrarMaterial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ActualizarMaterial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BorrarMaterial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ActualizarMaterial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new BorrarMaterial().setVisible(true);
+                    new ActualizarMaterial().setVisible(true);
                 } catch (SQLException ex) {
                     System.out.println(ex);
                 }
