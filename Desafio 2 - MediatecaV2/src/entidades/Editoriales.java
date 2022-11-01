@@ -7,42 +7,17 @@ package entidades;
 
 import java.io.Serializable;
 import java.util.List;
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author PC
+ * @author Jorge Díaz
  */
-@Entity
-@Table(name = "editoriales")
-@XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Editoriales.findAll", query = "SELECT e FROM Editoriales e")
-    , @NamedQuery(name = "Editoriales.findById", query = "SELECT e FROM Editoriales e WHERE e.id = :id")
-    , @NamedQuery(name = "Editoriales.findByNombreEditorial", query = "SELECT e FROM Editoriales e WHERE e.nombreEditorial = :nombreEditorial")})
 public class Editoriales implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-    @Column(name = "id")
     private Integer id;
-    @Basic(optional = false)
-    @Column(name = "nombre_editorial")
+
     private String nombreEditorial;
-    @OneToMany(mappedBy = "codigoEditorial")
+
     private List<Materiales> materialesList;
 
     public Editoriales() {
@@ -73,7 +48,6 @@ public class Editoriales implements Serializable {
         this.nombreEditorial = nombreEditorial;
     }
 
-    @XmlTransient
     public List<Materiales> getMaterialesList() {
         return materialesList;
     }
@@ -82,25 +56,25 @@ public class Editoriales implements Serializable {
         this.materialesList = materialesList;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Editoriales)) {
-            return false;
-        }
-        Editoriales other = (Editoriales) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
+//    @Override
+//    public int hashCode() {
+//        int hash = 0;
+//        hash += (id != null ? id.hashCode() : 0);
+//        return hash;
+//    }
+//
+//    @Override
+//    public boolean equals(Object object) {
+//        // TODO: Warning - this method won't work in the case the id fields are not set
+//        if (!(object instanceof Editoriales)) {
+//            return false;
+//        }
+//        Editoriales other = (Editoriales) object;
+//        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+//            return false;
+//        }
+//        return true;
+//    }
 
     @Override
     public String toString() {
