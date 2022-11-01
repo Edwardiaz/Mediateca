@@ -45,17 +45,16 @@ public class Dashboard extends javax.swing.JFrame {
     private void initComponents() {
 
         pnlMenu = new javax.swing.JPanel();
-        btnActualizar = new javax.swing.JButton();
         btnMostrar = new javax.swing.JButton();
         btnBorrar = new javax.swing.JButton();
         btnPrestar = new javax.swing.JButton();
         btnDevolver = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         btnAgregar = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         lblFecha = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        btnSalir = new javax.swing.JButton();
         lblWelcome = new javax.swing.JLabel();
         lblBanner = new javax.swing.JLabel();
 
@@ -66,24 +65,6 @@ public class Dashboard extends javax.swing.JFrame {
         pnlMenu.setBackground(new java.awt.Color(255, 255, 255));
         pnlMenu.setForeground(new java.awt.Color(255, 255, 255));
         pnlMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btnActualizar.setBackground(new java.awt.Color(255, 255, 255));
-        btnActualizar.setFont(new java.awt.Font("Century", 0, 12)); // NOI18N
-        btnActualizar.setForeground(new java.awt.Color(51, 0, 153));
-        btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnActualizar.png"))); // NOI18N
-        btnActualizar.setText("Modificar material");
-        btnActualizar.setIconTextGap(7);
-        btnActualizar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnActualizarMousePressed(evt);
-            }
-        });
-        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActualizarActionPerformed(evt);
-            }
-        });
-        pnlMenu.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 180, 49));
 
         btnMostrar.setBackground(new java.awt.Color(255, 255, 255));
         btnMostrar.setFont(new java.awt.Font("Century", 0, 12)); // NOI18N
@@ -100,7 +81,7 @@ public class Dashboard extends javax.swing.JFrame {
                 btnMostrarActionPerformed(evt);
             }
         });
-        pnlMenu.add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 180, 49));
+        pnlMenu.add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 180, 49));
 
         btnBorrar.setBackground(new java.awt.Color(255, 255, 255));
         btnBorrar.setFont(new java.awt.Font("Century", 0, 12)); // NOI18N
@@ -112,7 +93,7 @@ public class Dashboard extends javax.swing.JFrame {
                 btnBorrarActionPerformed(evt);
             }
         });
-        pnlMenu.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 180, 49));
+        pnlMenu.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 180, 49));
 
         btnPrestar.setBackground(new java.awt.Color(255, 255, 255));
         btnPrestar.setFont(new java.awt.Font("Century", 0, 12)); // NOI18N
@@ -124,14 +105,14 @@ public class Dashboard extends javax.swing.JFrame {
                 btnPrestarMousePressed(evt);
             }
         });
-        pnlMenu.add(btnPrestar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 180, 49));
+        pnlMenu.add(btnPrestar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 180, 49));
 
         btnDevolver.setBackground(new java.awt.Color(255, 255, 255));
         btnDevolver.setFont(new java.awt.Font("Century", 0, 12)); // NOI18N
         btnDevolver.setForeground(new java.awt.Color(51, 0, 153));
         btnDevolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-devolver.png"))); // NOI18N
         btnDevolver.setText("Devolver material");
-        pnlMenu.add(btnDevolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 180, 49));
+        pnlMenu.add(btnDevolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 180, 49));
 
         jButton9.setBackground(new java.awt.Color(255, 255, 255));
         jButton9.setFont(new java.awt.Font("Century", 0, 12)); // NOI18N
@@ -148,7 +129,7 @@ public class Dashboard extends javax.swing.JFrame {
                 jButton9ActionPerformed(evt);
             }
         });
-        pnlMenu.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 180, 49));
+        pnlMenu.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 180, 49));
 
         btnAgregar.setBackground(new java.awt.Color(255, 255, 255));
         btnAgregar.setFont(new java.awt.Font("Century", 0, 12)); // NOI18N
@@ -170,7 +151,20 @@ public class Dashboard extends javax.swing.JFrame {
         });
         pnlMenu.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 49));
 
-        getContentPane().add(pnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 420));
+        btnSalir.setBackground(new java.awt.Color(153, 153, 255));
+        btnSalir.setFont(new java.awt.Font("Century", 0, 12)); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-salir.png"))); // NOI18N
+        btnSalir.setText("Salir");
+        btnSalir.setBorder(null);
+        btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnSalirMousePressed(evt);
+            }
+        });
+        pnlMenu.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 180, 50));
+
+        getContentPane().add(pnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, -1));
 
         jPanel2.setBackground(new java.awt.Color(102, 0, 204));
         jPanel2.setForeground(new java.awt.Color(102, 0, 204));
@@ -199,27 +193,14 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnSalir.setBackground(new java.awt.Color(153, 153, 255));
-        btnSalir.setFont(new java.awt.Font("Century", 0, 12)); // NOI18N
-        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-salir.png"))); // NOI18N
-        btnSalir.setText("Salir");
-        btnSalir.setBorder(null);
-        btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSalir.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnSalirMousePressed(evt);
-            }
-        });
-        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 260, 107, 50));
-
         lblWelcome.setFont(new java.awt.Font("Century", 1, 24)); // NOI18N
         lblWelcome.setText("Bienvenido a Mediateca - Grupo 2");
         jPanel1.add(lblWelcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         lblBanner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/libros.png"))); // NOI18N
-        jPanel1.add(lblBanner, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 20, -1, 190));
+        jPanel1.add(lblBanner, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, -1, 190));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 620, 330));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 620, 260));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -230,7 +211,7 @@ public class Dashboard extends javax.swing.JFrame {
   
     }//GEN-LAST:event_btnAgregarActionPerformed
 
-    private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
+    private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // TODO add your handling code here:
     }
     
@@ -244,19 +225,6 @@ public class Dashboard extends javax.swing.JFrame {
             Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnAgregarMousePressed
-
-    private void btnActualizarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarMousePressed
-        try {
-            // TODO add your handling code here:
-            ActualizarMaterial modificar = new ActualizarMaterial();
-            modificar.setVisible(true);
-            this.dispose();
-        } catch (SQLException ex) {
-            System.out.println("Error en sentencia SQL" + ex);
-        }
-        
-            
-    }//GEN-LAST:event_btnActualizarMousePressed
 
     private void btnMostrarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMostrarMousePressed
         ElegirVista vista = new ElegirVista();
@@ -292,10 +260,6 @@ public class Dashboard extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_BtnBuscarMousePressed
-
-    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void btnPrestarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPrestarMousePressed
         try {
@@ -349,7 +313,6 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnBorrar;
     private javax.swing.JButton btnDevolver;
