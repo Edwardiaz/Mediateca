@@ -213,6 +213,10 @@ public class Dashboard extends javax.swing.JFrame {
   
     }//GEN-LAST:event_btnAgregarActionPerformed
 
+    private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
+        // TODO add your handling code here:
+    }
+    
     private void btnAgregarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarMousePressed
         try {
             
