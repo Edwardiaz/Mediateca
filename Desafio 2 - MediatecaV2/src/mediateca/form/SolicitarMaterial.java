@@ -168,7 +168,13 @@ public class SolicitarMaterial extends javax.swing.JFrame {
             } else if (verificarPrestamo(carnet, idMater)) {
                 JOptionPane.showMessageDialog(this, "El socio " + carnet +" ya cuenta con el material seleccionado. \n", "AVISO", JOptionPane.INFORMATION_MESSAGE);
                 txtSocio.setText("");
-            }  else {
+            } else if (!materialDisp(idMater)){
+                 JOptionPane.showMessageDialog(this, "No contamos con unidades de ese material. Intenta con otro \n", "AVISO", JOptionPane.INFORMATION_MESSAGE);
+                 txtSocio.setText("");
+                 txtSocio.requestFocus();
+            }  
+            
+            else {
                 // Insertar el prestamo a la DB.
                 insertarPrestamo(carnet, idMater);
                 JOptionPane.showMessageDialog(this, "¡Prestamo realizado exitosamente! \n", "HECHO", JOptionPane.INFORMATION_MESSAGE);
@@ -187,11 +193,24 @@ public class SolicitarMaterial extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tblSolicitudMouseClicked
 
+     public boolean materialDisp(String id_material) throws SQLException {
+        boolean res = false;
+        PreparedStatement stmt = con.prepareStatement("SELECT unidades_disponibles FROM materiales WHERE id = '" + id_material + "' LIMIT 1");
+        ResultSet re = stmt.executeQuery();
+        if (re.next()) {
+            int d = Integer.parseInt(re.getString("unidades_disponibles"));
+            if (d >= 1) {
+                res = true;
+            }
+        }
+        return res;
+    }
+    
     //Método para verificar si existe el material dentro del sistema
     public boolean existeMaterial(String id_material) throws SQLException {
         boolean res = false;
         Statement stm = con.createStatement();
-        ResultSet re = stm.executeQuery("SELECT `id` FROM materiales WHERE `id` = '" + id_material + "' LIMIT 1");
+        ResultSet re = stm.executeQuery("SELECT id FROM materiales WHERE id = '" + id_material + "' LIMIT 1");
         if (re.next()) {
             res = true;
         }
@@ -348,22 +367,22 @@ public class SolicitarMaterial extends javax.swing.JFrame {
 
             String lista[][] = new String[count][15];
             int i = 0;
-            ResultSet re = ps.executeQuery("SELECT * FROM materiales");
+            ResultSet re = ps.executeQuery("SELECT materiales.id, materiales.titulo, autores.nombre_autor AS Autor, materiales.numero_de_paginas, editoriales.nombre_editorial AS Editorial, materiales.isbn, materiales.periodicidad, materiales.fecha_publicacion, artistas.nombre_artista AS Artista, materiales.duracion, materiales.numero_de_canciones, materiales.unidades_disponibles, directores.nombre_director as Director, materiales.duracion, generos.nombre_genero AS Genero,tipo_material.tipo_material AS Tipo from materiales LEFT JOIN directores on directores.id = materiales.codigo_director LEFT JOIN generos ON generos.id = materiales.codigo_genero LEFT JOIN tipo_material ON tipo_material.id = materiales.codigo_tipo_material LEFT JOIN autores on autores.id = materiales.codigo_autor LEFT JOIN artistas ON artistas.id = materiales.codigo_artista LEFT JOIN editoriales ON editoriales.id = materiales.codigo_editorial");
             while (re.next()) {
                 lista[i][0] = re.getString("id");
                 lista[i][1] = re.getString("titulo");
-                lista[i][2] = re.getString("codigo_tipo_material");
-                lista[i][3] = re.getString("codigo_autor");
+                lista[i][2] = re.getString("Tipo");
+                lista[i][3] = re.getString("Autor");
                 lista[i][4] = re.getString("numero_de_paginas");
-                lista[i][5] = re.getString("codigo_editorial");
+                lista[i][5] = re.getString("Editorial");
                 lista[i][6] = re.getString("isbn");
                 lista[i][7] = re.getString("periodicidad");
                 lista[i][8] = re.getString("fecha_publicacion");
-                lista[i][9] = re.getString("codigo_artista");
-                lista[i][10] = re.getString("codigo_genero");
+                lista[i][9] = re.getString("Artista");
+                lista[i][10] = re.getString("Genero");
                 lista[i][11] = re.getString("duracion");
                 lista[i][12] = re.getString("numero_de_canciones");
-                lista[i][13] = re.getString("codigo_director");
+                lista[i][13] = re.getString("Director");
                 lista[i][14] = re.getString("unidades_disponibles");
                 i++;
             }
