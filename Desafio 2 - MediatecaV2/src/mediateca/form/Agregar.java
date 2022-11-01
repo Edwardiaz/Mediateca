@@ -269,7 +269,7 @@ public class Agregar extends javax.swing.JFrame {
 
         txtIsbn.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         txtIsbn.setForeground(new java.awt.Color(102, 102, 102));
-        txtIsbn.setText("Ingrese ISBN");
+        txtIsbn.setText("Ingrese los 13 digitos del ISBN");
         txtIsbn.setAlignmentX(0.8F);
         txtIsbn.setBorder(null);
         txtIsbn.setMargin(new java.awt.Insets(5, 15, 5, 5));
@@ -299,7 +299,7 @@ public class Agregar extends javax.swing.JFrame {
 
         txtFecha.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         txtFecha.setForeground(new java.awt.Color(102, 102, 102));
-        txtFecha.setText("Ingrese fecha");
+        txtFecha.setText("dia/mes/año");
         txtFecha.setAlignmentX(0.8F);
         txtFecha.setBorder(null);
         txtFecha.setMargin(new java.awt.Insets(5, 15, 5, 5));
@@ -387,7 +387,7 @@ public class Agregar extends javax.swing.JFrame {
 
         txtTipo.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         txtTipo.setForeground(new java.awt.Color(102, 102, 102));
-        txtTipo.setText("Ingrese tipo material");
+        txtTipo.setText("Ingrese (LIBRO, DVD, CDA o REVISTA)");
         txtTipo.setAlignmentX(0.8F);
         txtTipo.setBorder(null);
         txtTipo.setMargin(new java.awt.Insets(5, 15, 5, 5));
