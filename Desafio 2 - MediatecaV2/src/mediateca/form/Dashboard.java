@@ -290,13 +290,13 @@ public class Dashboard extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            org.apache.log4j.Logger.getLogger(ConsultarMateriales.class.getName()).warn(ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            org.apache.log4j.Logger.getLogger(ConsultarMateriales.class.getName()).warn(ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            org.apache.log4j.Logger.getLogger(ConsultarMateriales.class.getName()).warn(ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            org.apache.log4j.Logger.getLogger(ConsultarMateriales.class.getName()).warn(ex);
         }
         //</editor-fold>
 

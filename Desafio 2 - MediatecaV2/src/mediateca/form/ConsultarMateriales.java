@@ -2,6 +2,7 @@ package mediateca.form;
 
 import datos.Conexion;
 import java.sql.*;
+import java.util.logging.Level;
 import javax.swing.JOptionPane;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -33,6 +34,7 @@ public class ConsultarMateriales extends JFrame {
         btnBuscar = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -86,6 +88,16 @@ public class ConsultarMateriales extends JFrame {
         jTextField1.setForeground(new java.awt.Color(153, 153, 153));
         jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 30));
 
+        jButton1.setFont(new java.awt.Font("Century", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(102, 0, 153));
+        jButton1.setText("Limpiar Busqueda");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton1MousePressed(evt);
+            }
+        });
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 160, 50));
+
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 510));
 
         pack();
@@ -109,6 +121,14 @@ public class ConsultarMateriales extends JFrame {
             Logger.getLogger(ConsultarMateriales.class.getName()).warn(ex);
         }
     }//GEN-LAST:event_btnBackMousePressed
+
+    private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
+        try {
+            mostrarMaterial();
+        } catch (SQLException ex) {
+            Logger.getLogger(ConsultarMateriales.class.getName()).warn(ex);
+        }
+    }//GEN-LAST:event_jButton1MousePressed
     
     public void buscador() throws SQLException {
         try {
@@ -299,6 +319,7 @@ public class ConsultarMateriales extends JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
