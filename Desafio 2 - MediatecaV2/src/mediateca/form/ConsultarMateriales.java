@@ -5,7 +5,6 @@ import java.sql.*;
 import javax.swing.JOptionPane;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableRowSorter;
 import org.apache.log4j.Logger;
 
 /**
@@ -69,11 +68,6 @@ public class ConsultarMateriales extends JFrame {
                 btnBuscarMousePressed(evt);
             }
         });
-        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarActionPerformed(evt);
-            }
-        });
         jPanel2.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 100, 50));
 
         btnBack.setBackground(new java.awt.Color(255, 255, 255));
@@ -90,19 +84,6 @@ public class ConsultarMateriales extends JFrame {
         jPanel2.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 90, 50));
 
         jTextField1.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTextField1KeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextField1KeyTyped(evt);
-            }
-        });
         jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 30));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 990, 510));
@@ -125,26 +106,9 @@ public class ConsultarMateriales extends JFrame {
             dash.setVisible(true);
             this.dispose();
         } catch (SQLException ex) {
-            //Logger.getLogger(ConsultarMateriales.class.getName()).log(Priority.WARN, null, ex);
             Logger.getLogger(ConsultarMateriales.class.getName()).warn(ex);
         }
     }//GEN-LAST:event_btnBackMousePressed
-
-    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBuscarActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1KeyTyped
-
-    private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
-        
-    }//GEN-LAST:event_jTextField1KeyReleased
     
     public void buscador() throws SQLException {
         try {
@@ -187,7 +151,7 @@ public class ConsultarMateriales extends JFrame {
                     i++;
                 }
 
-                //Variable que almacena el identificador de la cleda seleccionada
+                //Variable que almacena el identificador de la celda seleccionada
                 String titulo = lista[0][1];
                 if (titulo == null || titulo.equals("")) {
                     JOptionPane.showMessageDialog(this, "Debe escribir el titulo del material a buscar. \n", "AVISO", JOptionPane.INFORMATION_MESSAGE);
@@ -196,24 +160,18 @@ public class ConsultarMateriales extends JFrame {
                     try {
                         stmt = con.createStatement();
                     } catch (SQLException ex) {
-                        //System.out.println("ERROR: " + ex);
                         Logger.getLogger(ConsultarMateriales.class.getName()).warn(ex);
                     }
                     try {
-                        /*stmt.executeUpdate("SELECT * FROM materiales WHERE `titulo` like '"+texto+"%'");
-                        JOptionPane.showMessageDialog(this, "¡Material Encontrado! \n", "HECHO", JOptionPane.INFORMATION_MESSAGE);*/
                         mostrarResultado(texto);
                     } catch (SQLException ex) {
-                        //System.out.println("ERROR: " + ex);
                         Logger.getLogger(ConsultarMateriales.class.getName()).warn(ex);
                     }
                 }
             }
         } catch (SQLException ex) {
-            //System.out.println("ERROR" + ex);
             Logger.getLogger(ConsultarMateriales.class.getName()).warn(ex);
         }
-
     }
     
     public void mostrarResultado(String titulo) throws SQLException {
@@ -325,10 +283,8 @@ public class ConsultarMateriales extends JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ConsultarMateriales.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
+        /* renderiza y despliega el formulario */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {

@@ -1,7 +1,6 @@
 package mediateca.form;
 
 import datos.Conexion;
-import entidades.Materiales;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -573,10 +572,8 @@ public class AgregarCD extends javax.swing.JFrame {
         } else {
 
             try {
-                Materiales material = new Materiales();
                 //Creación de variables que almacenan los datos introducidos
                 String id = txtIdCd.getText();
-                //material.setId(txtIdCd.getText());
                 String titulo = txtTituloCd.getText();
                 String artista = txtArtista.getText();
                 String genre = txtGenero.getText();

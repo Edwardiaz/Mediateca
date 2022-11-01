@@ -80,6 +80,11 @@ public class Dashboard extends javax.swing.JFrame {
                 btnActualizarMousePressed(evt);
             }
         });
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarActionPerformed(evt);
+            }
+        });
         pnlMenu.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 180, 49));
 
         btnMostrar.setBackground(new java.awt.Color(255, 255, 255));
@@ -217,7 +222,7 @@ public class Dashboard extends javax.swing.JFrame {
     private void btnActualizarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarMousePressed
         try {
             // TODO add your handling code here:
-            BorrarMaterial modificar = new BorrarMaterial();
+            ActualizarMaterial modificar = new ActualizarMaterial();
             modificar.setVisible(true);
             this.dispose();
         } catch (SQLException ex) {
@@ -257,6 +262,10 @@ public class Dashboard extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_BtnBuscarMousePressed
+
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnActualizarActionPerformed
 
     /**
      * @param args the command line arguments
