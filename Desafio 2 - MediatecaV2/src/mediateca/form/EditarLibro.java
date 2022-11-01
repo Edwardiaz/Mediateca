@@ -36,7 +36,6 @@ public class EditarLibro extends javax.swing.JFrame {
            ps = con.prepareStatement(sql);
            rs = ps.executeQuery();
            
-           System.out.println(sql);
            if(rs.next()){           
                 txtIdlibro.setText(rs.getString("id"));
                 txtTituloLibro.setText(rs.getString("titulo"));

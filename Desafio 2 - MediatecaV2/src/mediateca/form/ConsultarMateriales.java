@@ -5,7 +5,7 @@ import java.sql.*;
 import javax.swing.JOptionPane;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  *
@@ -96,7 +96,7 @@ public class ConsultarMateriales extends JFrame {
             buscador();
         } catch (SQLException ex) {
             //System.out.println("ERROR: " + ex);
-            Logger.getLogger(ConsultarMateriales.class.getName()).warn(ex);
+            LogManager.getLogger(ConsultarMateriales.class.getName()).warn(ex);
         }
     }//GEN-LAST:event_btnBuscarMousePressed
 
@@ -106,7 +106,7 @@ public class ConsultarMateriales extends JFrame {
             dash.setVisible(true);
             this.dispose();
         } catch (SQLException ex) {
-            Logger.getLogger(ConsultarMateriales.class.getName()).warn(ex);
+            LogManager.getLogger(ConsultarMateriales.class.getName()).warn(ex);
         }
     }//GEN-LAST:event_btnBackMousePressed
     
@@ -160,17 +160,17 @@ public class ConsultarMateriales extends JFrame {
                     try {
                         stmt = con.createStatement();
                     } catch (SQLException ex) {
-                        Logger.getLogger(ConsultarMateriales.class.getName()).warn(ex);
+                        LogManager.getLogger(ConsultarMateriales.class.getName()).warn(ex);
                     }
                     try {
                         mostrarResultado(texto);
                     } catch (SQLException ex) {
-                        Logger.getLogger(ConsultarMateriales.class.getName()).warn(ex);
+                        LogManager.getLogger(ConsultarMateriales.class.getName()).warn(ex);
                     }
                 }
             }
         } catch (SQLException ex) {
-            Logger.getLogger(ConsultarMateriales.class.getName()).warn(ex);
+            LogManager.getLogger(ConsultarMateriales.class.getName()).warn(ex);
         }
     }
     
@@ -290,7 +290,7 @@ public class ConsultarMateriales extends JFrame {
                 try {
                     new ConsultarMateriales().setVisible(true);
                 } catch (SQLException ex) {
-                    Logger.getLogger(ConsultarMateriales.class.getName()).warn(ex);//log(Level.SEVERE, null, ex);
+                    LogManager.getLogger(ConsultarMateriales.class.getName()).warn(ex);//log(Level.SEVERE, null, ex);
                 }
             }
         });
