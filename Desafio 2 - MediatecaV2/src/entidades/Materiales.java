@@ -3,6 +3,16 @@ package entidades;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.Basic;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -10,6 +20,7 @@ import java.util.List;
  */
 public class Materiales implements Serializable {
 
+    private static final long serialVersionUID = 1L;
     private String id;
     
     private String titulo;
@@ -28,13 +39,23 @@ public class Materiales implements Serializable {
     
     private Integer unidadesDisponibles;
     
-    private Integer codigoArtista;
-    private Integer codigoAutor;
-    private Integer codigoDirector;
-    private Integer codigoEditorial;
-    private Integer codigoGenero;
-    //private TipoMaterial codigoTipoMaterial;
-    private Integer codigoTipoMaterial;
+    private Artistas codigoArtista;
+    @JoinColumn(name = "codigo_autor", referencedColumnName = "id")
+    @ManyToOne
+    private Autores codigoAutor;
+    @JoinColumn(name = "codigo_director", referencedColumnName = "id")
+    @ManyToOne
+    private Directores codigoDirector;
+    @JoinColumn(name = "codigo_editorial", referencedColumnName = "id")
+    @ManyToOne
+    private Editoriales codigoEditorial;
+    @JoinColumn(name = "codigo_genero", referencedColumnName = "id")
+    @ManyToOne
+    private Generos codigoGenero;
+    @JoinColumn(name = "codigo_tipo_material", referencedColumnName = "id")
+    @ManyToOne(optional = false)
+    private TipoMaterial codigoTipoMaterial;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "codigoMaterial")
     private List<Prestamos> prestamosList;
 
     public Materiales() {
@@ -44,28 +65,10 @@ public class Materiales implements Serializable {
         this.id = id;
     }
 
-    public Materiales(String id, String titulo, String numeroDePaginas, String isbn, String periodicidad, Date fechaPublicacion, String duracion, String numeroDeCanciones, Integer unidadesDisponibles, Integer codigoArtista, Integer codigoAutor, Integer codigoDirector, Integer codigoEditorial, Integer codigoGenero, Integer codigoTipoMaterial) {
+    public Materiales(String id, String titulo) {
         this.id = id;
         this.titulo = titulo;
-        this.numeroDePaginas = numeroDePaginas;
-        this.isbn = isbn;
-        this.periodicidad = periodicidad;
-        this.fechaPublicacion = fechaPublicacion;
-        this.duracion = duracion;
-        this.numeroDeCanciones = numeroDeCanciones;
-        this.unidadesDisponibles = unidadesDisponibles;
-        this.codigoArtista = codigoArtista;
-        this.codigoAutor = codigoAutor;
-        this.codigoDirector = codigoDirector;
-        this.codigoEditorial = codigoEditorial;
-        this.codigoGenero = codigoGenero;
-        this.codigoTipoMaterial = codigoTipoMaterial;
     }
-    
-//    public Materiales(String id, String titulo) {
-//        this.id = id;
-//        this.titulo = titulo;
-//    }
 
     public String getId() {
         return id;
@@ -139,54 +142,55 @@ public class Materiales implements Serializable {
         this.unidadesDisponibles = unidadesDisponibles;
     }
 
-    public Integer getCodigoArtista() {
+    public Artistas getCodigoArtista() {
         return codigoArtista;
     }
 
-    public void setCodigoArtista(Integer codigoArtista) {
+    public void setCodigoArtista(Artistas codigoArtista) {
         this.codigoArtista = codigoArtista;
     }
 
-    public Integer getCodigoAutor() {
+    public Autores getCodigoAutor() {
         return codigoAutor;
     }
 
-    public void setCodigoAutor(Integer codigoAutor) {
+    public void setCodigoAutor(Autores codigoAutor) {
         this.codigoAutor = codigoAutor;
     }
 
-    public Integer getCodigoDirector() {
+    public Directores getCodigoDirector() {
         return codigoDirector;
     }
 
-    public void setCodigoDirector(Integer codigoDirector) {
+    public void setCodigoDirector(Directores codigoDirector) {
         this.codigoDirector = codigoDirector;
     }
 
-    public Integer getCodigoEditorial() {
+    public Editoriales getCodigoEditorial() {
         return codigoEditorial;
     }
 
-    public void setCodigoEditorial(Integer codigoEditorial) {
+    public void setCodigoEditorial(Editoriales codigoEditorial) {
         this.codigoEditorial = codigoEditorial;
     }
 
-    public Integer getCodigoGenero() {
+    public Generos getCodigoGenero() {
         return codigoGenero;
     }
 
-    public void setCodigoGenero(Integer codigoGenero) {
+    public void setCodigoGenero(Generos codigoGenero) {
         this.codigoGenero = codigoGenero;
     }
 
-    public Integer getCodigoTipoMaterial() {
+    public TipoMaterial getCodigoTipoMaterial() {
         return codigoTipoMaterial;
     }
 
-    public void setCodigoTipoMaterial(Integer codigoTipoMaterial) {
+    public void setCodigoTipoMaterial(TipoMaterial codigoTipoMaterial) {
         this.codigoTipoMaterial = codigoTipoMaterial;
     }
 
+    @XmlTransient
     public List<Prestamos> getPrestamosList() {
         return prestamosList;
     }
@@ -194,26 +198,26 @@ public class Materiales implements Serializable {
     public void setPrestamosList(List<Prestamos> prestamosList) {
         this.prestamosList = prestamosList;
     }
-//
-//    @Override
-//    public int hashCode() {
-//        int hash = 0;
-//        hash += (id != null ? id.hashCode() : 0);
-//        return hash;
-//    }
-//
-//    @Override
-//    public boolean equals(Object object) {
-//        // TODO: Warning - this method won't work in the case the id fields are not set
-//        if (!(object instanceof Materiales)) {
-//            return false;
-//        }
-//        Materiales other = (Materiales) object;
-//        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-//            return false;
-//        }
-//        return true;
-//    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (id != null ? id.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Materiales)) {
+            return false;
+        }
+        Materiales other = (Materiales) object;
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
+    }
 
     @Override
     public String toString() {

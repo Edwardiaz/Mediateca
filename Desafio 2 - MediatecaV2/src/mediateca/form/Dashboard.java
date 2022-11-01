@@ -1,11 +1,15 @@
 package mediateca.form;
 
 import datos.Conexion;
-import java.sql.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -26,7 +30,7 @@ public class Dashboard extends javax.swing.JFrame {
         int dia = now.getDayOfMonth();
         int month = now.getMonthValue();
         String[] meses = {"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto"," ;Septiembre"
-            ,"Octubre","Noviembre","Diciembre"};
+            ,"Octubre","Noviembre","Diciemrbre"};
         lblFecha.setText("Hoy es "+dia+" de "+meses[month - 1]+" de "+year);
         this.setLocationRelativeTo(null);
         this.setTitle("Mediateca UDB - GRUPO 02");
@@ -45,17 +49,16 @@ public class Dashboard extends javax.swing.JFrame {
     private void initComponents() {
 
         pnlMenu = new javax.swing.JPanel();
+        btnActualizar = new javax.swing.JButton();
         btnMostrar = new javax.swing.JButton();
         btnBorrar = new javax.swing.JButton();
         btnSolicitar = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         btnAgregar = new javax.swing.JButton();
-        btnSalir = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         lblFecha = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        lblWelcome = new javax.swing.JLabel();
-        lblBanner = new javax.swing.JLabel();
+        btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -65,7 +68,61 @@ public class Dashboard extends javax.swing.JFrame {
         pnlMenu.setForeground(new java.awt.Color(255, 255, 255));
         pnlMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnActualizar.setBackground(new java.awt.Color(255, 255, 255));
+        btnActualizar.setFont(new java.awt.Font("Century", 0, 12)); // NOI18N
+        btnActualizar.setForeground(new java.awt.Color(51, 0, 153));
+        btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btnActualizar.png"))); // NOI18N
+        btnActualizar.setText("Modificar material");
+        btnActualizar.setIconTextGap(7);
+        btnActualizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnActualizarMousePressed(evt);
+            }
+        });
+        pnlMenu.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 180, 49));
 
+        btnMostrar.setBackground(new java.awt.Color(255, 255, 255));
+        btnMostrar.setFont(new java.awt.Font("Century", 0, 12)); // NOI18N
+        btnMostrar.setForeground(new java.awt.Color(51, 0, 153));
+        btnMostrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-mostrar.png"))); // NOI18N
+        btnMostrar.setText("Mostrar material");
+        btnMostrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnMostrarMousePressed(evt);
+            }
+        });
+        pnlMenu.add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 180, 49));
+
+        btnBorrar.setBackground(new java.awt.Color(255, 255, 255));
+        btnBorrar.setFont(new java.awt.Font("Century", 0, 12)); // NOI18N
+        btnBorrar.setForeground(new java.awt.Color(51, 0, 153));
+        btnBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-eliminar.png"))); // NOI18N
+        btnBorrar.setText("Borrar material");
+        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarActionPerformed(evt);
+            }
+        });
+        pnlMenu.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 180, 49));
+
+        btnSolicitar.setBackground(new java.awt.Color(255, 255, 255));
+        btnSolicitar.setFont(new java.awt.Font("Century", 0, 12)); // NOI18N
+        btnSolicitar.setForeground(new java.awt.Color(51, 0, 153));
+        btnSolicitar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-prestar.png"))); // NOI18N
+        btnSolicitar.setText("Solicitar o Devolver");
+        btnSolicitar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSolicitarActionPerformed(evt);
+            }
+        });
+        pnlMenu.add(btnSolicitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 180, 49));
+
+        jButton9.setBackground(new java.awt.Color(255, 255, 255));
+        jButton9.setFont(new java.awt.Font("Century", 0, 12)); // NOI18N
+        jButton9.setForeground(new java.awt.Color(51, 0, 153));
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-buscar.png"))); // NOI18N
+        jButton9.setText("Buscar material");
+        pnlMenu.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 180, 49));
 
         btnAgregar.setBackground(new java.awt.Color(255, 255, 255));
         btnAgregar.setFont(new java.awt.Font("Century", 0, 12)); // NOI18N
@@ -87,20 +144,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
         pnlMenu.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 49));
 
-        btnSalir.setBackground(new java.awt.Color(153, 153, 255));
-        btnSalir.setFont(new java.awt.Font("Century", 0, 12)); // NOI18N
-        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-salir.png"))); // NOI18N
-        btnSalir.setText("Salir");
-        btnSalir.setBorder(null);
-        btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSalir.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnSalirMousePressed(evt);
-            }
-        });
-        pnlMenu.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 180, 50));
-
-        getContentPane().add(pnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, -1));
+        getContentPane().add(pnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 420));
 
         jPanel2.setBackground(new java.awt.Color(102, 0, 204));
         jPanel2.setForeground(new java.awt.Color(102, 0, 204));
@@ -129,14 +173,13 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblWelcome.setFont(new java.awt.Font("Century", 1, 24)); // NOI18N
-        lblWelcome.setText("Bienvenido a Mediateca - Grupo 2");
-        jPanel1.add(lblWelcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        btnSalir.setBackground(new java.awt.Color(153, 153, 255));
+        btnSalir.setFont(new java.awt.Font("Century", 0, 12)); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-salir.png"))); // NOI18N
+        btnSalir.setText("Salir");
+        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, 107, 35));
 
-        lblBanner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/libros.png"))); // NOI18N
-        jPanel1.add(lblBanner, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, -1, 190));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 620, 260));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 620, 330));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -147,10 +190,6 @@ public class Dashboard extends javax.swing.JFrame {
   
     }//GEN-LAST:event_btnAgregarActionPerformed
 
-    private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
-    }
-    
     private void btnAgregarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarMousePressed
         try {
             
@@ -161,6 +200,19 @@ public class Dashboard extends javax.swing.JFrame {
             Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnAgregarMousePressed
+
+    private void btnActualizarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarMousePressed
+        try {
+            // TODO add your handling code here:
+            BorrarMaterial modificar = new BorrarMaterial();
+            modificar.setVisible(true);
+            this.dispose();
+        } catch (SQLException ex) {
+            System.out.println("Error en sentencia SQL" + ex);
+        }
+        
+            
+    }//GEN-LAST:event_btnActualizarMousePressed
 
     private void btnMostrarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMostrarMousePressed
         ElegirVista vista = new ElegirVista();
@@ -178,7 +230,10 @@ public class Dashboard extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnBorrarActionPerformed
 
-
+    private void btnSolicitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSolicitarActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnSolicitarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,13 +252,13 @@ public class Dashboard extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            org.apache.log4j.Logger.getLogger(ConsultarMateriales.class.getName()).warn(ex);
+            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            org.apache.log4j.Logger.getLogger(ConsultarMateriales.class.getName()).warn(ex);
+            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            org.apache.log4j.Logger.getLogger(ConsultarMateriales.class.getName()).warn(ex);
+            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            org.apache.log4j.Logger.getLogger(ConsultarMateriales.class.getName()).warn(ex);
+            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -220,6 +275,7 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnBorrar;
     private javax.swing.JButton btnMostrar;
@@ -228,9 +284,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel lblBanner;
     private javax.swing.JLabel lblFecha;
-    private javax.swing.JLabel lblWelcome;
     private javax.swing.JPanel pnlMenu;
     // End of variables declaration//GEN-END:variables
 }

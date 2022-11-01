@@ -1,12 +1,9 @@
 package mediateca.form;
 
-import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.String;
 import datos.Conexion;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -21,7 +18,7 @@ public class VistaCD extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         mostrarCD();
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -29,9 +26,8 @@ public class VistaCD extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCD = new javax.swing.JTable();
-        btnUpdate = new javax.swing.JButton();
+        btnAtras = new javax.swing.JButton();
         lblCD = new javax.swing.JLabel();
-        btnAtras1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,47 +47,29 @@ public class VistaCD extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 900, -1));
 
-        btnUpdate.setBackground(new java.awt.Color(255, 255, 255));
-        btnUpdate.setFont(new java.awt.Font("Century", 0, 14)); // NOI18N
-        btnUpdate.setForeground(new java.awt.Color(102, 0, 153));
-        btnUpdate.setBorder(null);
-        btnUpdate.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnUpdate.setLabel("Actualizar");
-        btnUpdate.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnAtras.setBackground(new java.awt.Color(255, 255, 255));
+        btnAtras.setFont(new java.awt.Font("Century", 0, 14)); // NOI18N
+        btnAtras.setForeground(new java.awt.Color(102, 0, 153));
+        btnAtras.setText("Atrás");
+        btnAtras.setBorder(null);
+        btnAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAtras.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnUpdateMousePressed(evt);
+                btnAtrasMousePressed(evt);
             }
         });
-        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUpdateActionPerformed(evt);
+                btnAtrasActionPerformed(evt);
             }
         });
-        jPanel1.add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 90, 40));
+        jPanel1.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 480, 90, 40));
 
         lblCD.setBackground(new java.awt.Color(255, 255, 255));
         lblCD.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
         lblCD.setForeground(new java.awt.Color(102, 0, 153));
         lblCD.setText("CD- Mediateca");
         jPanel1.add(lblCD, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 190, -1));
-
-        btnAtras1.setBackground(new java.awt.Color(255, 255, 255));
-        btnAtras1.setFont(new java.awt.Font("Century", 0, 14)); // NOI18N
-        btnAtras1.setForeground(new java.awt.Color(102, 0, 153));
-        btnAtras1.setText("Atrás");
-        btnAtras1.setBorder(null);
-        btnAtras1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnAtras1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnAtras1MousePressed(evt);
-            }
-        });
-        btnAtras1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAtras1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 480, 90, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -110,40 +88,16 @@ public class VistaCD extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    //Abrir formulario para editar CD
-    private void btnUpdateMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateMousePressed
-        try{
-            //verificamos si hay algun registro seleccionado, si no mostramos un error
-            if(this.tblCD.getSelectionModel().isSelectionEmpty()){
-                JOptionPane.showMessageDialog(null,"Debe seleccionar un registro para poder actualizar datos!");
-            }
-            else{
-                //Seleccionamos numero de registro seleccionado
-                int linea = this.tblCD.getSelectedRow();
-                int modelRow = tblCD.convertRowIndexToModel(linea);
-                String s = tblCD.getModel().getValueAt(modelRow, 0)+"";
 
-                EditarCD cd = new EditarCD(s);
-                cd.setVisible(true);
-                this.dispose();               
-            }
+    private void btnAtrasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAtrasMousePressed
+        ElegirVista vista = new ElegirVista();
+        vista.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnAtrasMousePressed
 
-        } catch (SQLException e){
-            System.out.println("ERROR. " +e);
-        }
-    }//GEN-LAST:event_btnUpdateMousePressed
-
-    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnUpdateActionPerformed
-
-    private void btnAtras1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAtras1MousePressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAtras1MousePressed
-
-    private void btnAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtras1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAtras1ActionPerformed
+    }//GEN-LAST:event_btnAtrasActionPerformed
 
     
     public void mostrarCD () throws SQLException{
@@ -230,8 +184,7 @@ public class VistaCD extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAtras1;
-    private javax.swing.JButton btnUpdate;
+    private javax.swing.JButton btnAtras;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCD;

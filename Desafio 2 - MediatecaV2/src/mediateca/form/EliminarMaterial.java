@@ -3,12 +3,10 @@ package mediateca.form;
 import datos.Conexion;
 import java.sql.*;
 import java.util.logging.Level;
-//import java.util.logging.Logger;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import org.apache.log4j.Logger;
-import org.apache.log4j.Priority;
 
 /**
  *
@@ -71,11 +69,6 @@ public class EliminarMaterial extends JFrame {
                 btnEliminarMousePressed(evt);
             }
         });
-        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarActionPerformed(evt);
-            }
-        });
         jPanel2.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 400, 100, 50));
 
         btnBack.setBackground(new java.awt.Color(255, 255, 255));
@@ -101,8 +94,6 @@ public class EliminarMaterial extends JFrame {
             delete();
         } catch (SQLException ex) {
             System.out.println("ERROR: " + ex);
-            //Logger.getLogger(EliminarMaterial.class.getName()).log(Priority.ERROR, ex);
-            Logger.getLogger(ConsultarMateriales.class.getName()).warn(ex);
         }
     }//GEN-LAST:event_btnEliminarMousePressed
 
@@ -112,13 +103,9 @@ public class EliminarMaterial extends JFrame {
             dash.setVisible(true);
             this.dispose();
         } catch (SQLException ex) {
-            Logger.getLogger(EliminarMaterial.class.getName()).log(Priority.WARN, null, ex);
+            Logger.getLogger(EliminarMaterial.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnBackMousePressed
-
-    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEliminarActionPerformed
 
     public void delete() throws SQLException {
         try {
@@ -262,7 +249,7 @@ public class EliminarMaterial extends JFrame {
                 try {
                     new EliminarMaterial().setVisible(true);
                 } catch (SQLException ex) {
-                    Logger.getLogger(EliminarMaterial.class.getName()).warn(ex);//log(Level.SEVERE, null, ex);
+                    Logger.getLogger(EliminarMaterial.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });

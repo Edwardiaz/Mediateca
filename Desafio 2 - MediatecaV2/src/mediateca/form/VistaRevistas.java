@@ -4,7 +4,6 @@ import datos.Conexion;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -33,7 +32,6 @@ public class VistaRevistas extends javax.swing.JFrame {
         tblRevistas = new javax.swing.JTable();
         btnAtras = new javax.swing.JButton();
         lblLibrosTabla = new javax.swing.JLabel();
-        btnUpdate = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,7 +56,7 @@ public class VistaRevistas extends javax.swing.JFrame {
         btnAtras.setForeground(new java.awt.Color(102, 0, 153));
         btnAtras.setText("Atrás");
         btnAtras.setBorder(null);
-        btnAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAtras.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnAtrasMousePressed(evt);
@@ -76,24 +74,6 @@ public class VistaRevistas extends javax.swing.JFrame {
         lblLibrosTabla.setForeground(new java.awt.Color(102, 0, 153));
         lblLibrosTabla.setText("Revistas- Mediateca");
         jPanel1.add(lblLibrosTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 190, -1));
-
-        btnUpdate.setBackground(new java.awt.Color(255, 255, 255));
-        btnUpdate.setFont(new java.awt.Font("Century", 0, 14)); // NOI18N
-        btnUpdate.setForeground(new java.awt.Color(102, 0, 153));
-        btnUpdate.setBorder(null);
-        btnUpdate.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnUpdate.setLabel("Actualizar");
-        btnUpdate.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnUpdateMousePressed(evt);
-            }
-        });
-        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUpdateActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 90, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -122,32 +102,6 @@ public class VistaRevistas extends javax.swing.JFrame {
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAtrasActionPerformed
-
-    private void btnUpdateMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateMousePressed
-        try{
-            //verificamos si hay algun registro seleccionado, si no mostramos un error
-            if(this.tblRevistas.getSelectionModel().isSelectionEmpty()){
-                JOptionPane.showMessageDialog(null,"Debe seleccionar un registro para poder actualizar datos!");
-            }
-            else{
-                //Seleccionamos numero de registro seleccionado
-                int linea = this.tblRevistas.getSelectedRow();
-                int modelRow = tblRevistas.convertRowIndexToModel(linea);
-                String s = tblRevistas.getModel().getValueAt(modelRow, 0)+"";
-
-                EditarRev rev = new EditarRev(s);
-                rev.setVisible(true);
-                this.dispose();               
-            }
-
-        } catch (SQLException e){
-            System.out.println("ERROR. " +e);
-        }
-    }//GEN-LAST:event_btnUpdateMousePressed
-
-    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnUpdateActionPerformed
 
    public void mostrarRevistas() throws SQLException{
        PreparedStatement ps = null;
@@ -233,7 +187,6 @@ public class VistaRevistas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtras;
-    private javax.swing.JButton btnUpdate;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblLibrosTabla;
