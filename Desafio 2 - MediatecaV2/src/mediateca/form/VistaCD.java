@@ -139,6 +139,9 @@ public class VistaCD extends javax.swing.JFrame {
 
     private void btnAtras1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAtras1MousePressed
         // TODO add your handling code here:
+        ElegirVista vista = new ElegirVista();
+        vista.setVisible(true);
+        this.dispose();        
     }//GEN-LAST:event_btnAtras1MousePressed
 
     private void btnAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtras1ActionPerformed

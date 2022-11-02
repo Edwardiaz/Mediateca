@@ -7,8 +7,7 @@ import java.util.logging.Level;
 import javax.swing.JOptionPane;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import org.apache.log4j.Logger;
-import org.apache.log4j.Priority;
+import org.apache.logging.log4j.LogManager;
 
 /**
  *
@@ -102,7 +101,7 @@ public class EliminarMaterial extends JFrame {
         } catch (SQLException ex) {
             System.out.println("ERROR: " + ex);
             //Logger.getLogger(EliminarMaterial.class.getName()).log(Priority.ERROR, ex);
-            Logger.getLogger(ConsultarMateriales.class.getName()).warn(ex);
+            LogManager.getLogger(ConsultarMateriales.class.getName()).warn(ex);
         }
     }//GEN-LAST:event_btnEliminarMousePressed
 
@@ -112,7 +111,7 @@ public class EliminarMaterial extends JFrame {
             dash.setVisible(true);
             this.dispose();
         } catch (SQLException ex) {
-            Logger.getLogger(EliminarMaterial.class.getName()).log(Priority.WARN, null, ex);
+            LogManager.getLogger(EliminarMaterial.class.getName()).warn(ex);
         }
     }//GEN-LAST:event_btnBackMousePressed
 
@@ -262,7 +261,7 @@ public class EliminarMaterial extends JFrame {
                 try {
                     new EliminarMaterial().setVisible(true);
                 } catch (SQLException ex) {
-                    Logger.getLogger(EliminarMaterial.class.getName()).warn(ex);//log(Level.SEVERE, null, ex);
+                    LogManager.getLogger(EliminarMaterial.class.getName()).warn(ex);//log(Level.SEVERE, null, ex);
                 }
             }
         });

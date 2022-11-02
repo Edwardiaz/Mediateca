@@ -34,7 +34,6 @@ public class EditarDVD extends javax.swing.JFrame {
            ps = con.prepareStatement(sql);
            rs = ps.executeQuery();
            
-           System.out.println(sql);
            if(rs.next()){           
                 txtIdDvd.setText(rs.getString("id"));
                 txtTitulodvd.setText(rs.getString("titulo"));

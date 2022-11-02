@@ -35,14 +35,13 @@ public class EditarCD extends javax.swing.JFrame {
            ps = con.prepareStatement(sql);
            rs = ps.executeQuery();
            
-           System.out.println(sql);
            if(rs.next()){           
                 txtIdCd.setText(rs.getString("id"));
                 txtTituloCd.setText(rs.getString("titulo"));
                 txtArtista.setText(rs.getString("Artista"));
                 txtGenero.setText(rs.getString("Genero"));
-                txtCanciones.setText(rs.getString("duracion"));
-                txtDuracion.setText(rs.getString("numero_de_canciones"));
+                txtCanciones.setText(rs.getString("numero_de_canciones"));
+                txtDuracion.setText(rs.getString("duracion"));
                 txtDisponible.setText(rs.getString("unidades_disponibles"));
                 txtTipo.setText(rs.getString("Tipo"));
            }

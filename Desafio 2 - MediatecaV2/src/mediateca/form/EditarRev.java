@@ -36,7 +36,6 @@ public class EditarRev extends javax.swing.JFrame {
            ps = con.prepareStatement(sql);
            rs = ps.executeQuery();
            
-           System.out.println(sql);
            if(rs.next()){           
                 txtIdrev.setText(rs.getString("id"));
                 txtTituloRevista.setText(rs.getString("titulo"));

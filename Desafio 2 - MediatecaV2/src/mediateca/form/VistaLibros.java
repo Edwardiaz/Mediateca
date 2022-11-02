@@ -65,6 +65,11 @@ public class VistaLibros extends javax.swing.JFrame {
                 btnAtrasMousePressed(evt);
             }
         });
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 470, 90, 40));
 
         lblLibrosTabla.setBackground(new java.awt.Color(255, 255, 255));
@@ -138,6 +143,10 @@ public class VistaLibros extends javax.swing.JFrame {
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAtrasActionPerformed
 
     public void  mostrarDatos() throws SQLException{
         PreparedStatement ps = null;
