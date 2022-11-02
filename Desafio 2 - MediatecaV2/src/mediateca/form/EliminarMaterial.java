@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import org.apache.logging.log4j.LogManager;
+import org.apache.log4j.LogManager;
 
 /**
  *
