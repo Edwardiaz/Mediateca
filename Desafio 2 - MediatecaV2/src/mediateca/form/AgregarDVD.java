@@ -226,7 +226,7 @@ public class AgregarDVD extends javax.swing.JFrame {
 
         lblFecha.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblFecha.setForeground(new java.awt.Color(102, 0, 204));
-        lblFecha.setText("Duración");
+        lblFecha.setText("Duración (En minutos)");
         lblFecha.setName("lblFecha"); // NOI18N
         pnlAgregarMenu.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 80, -1, 20));
 
@@ -264,7 +264,7 @@ public class AgregarDVD extends javax.swing.JFrame {
 
         txtTipo.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         txtTipo.setForeground(new java.awt.Color(102, 102, 102));
-        txtTipo.setText("Ingrese tipo material");
+        txtTipo.setText("Ingrese tipo material (DVD)");
         txtTipo.setAlignmentX(0.8F);
         txtTipo.setBorder(null);
         txtTipo.setMargin(new java.awt.Insets(5, 15, 5, 5));
@@ -320,7 +320,7 @@ public class AgregarDVD extends javax.swing.JFrame {
             txtDuracion.setText("Ingrese duración");
         
         if(txtTipo.getText().equals("") || txtTipo.getText() == null)
-            txtTipo.setText("Ingrese tipo material");
+            txtTipo.setText("Ingrese tipo material (DVD)");
     }//GEN-LAST:event_txtIdDvdMousePressed
 
     private void txtIdDvdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdDvdActionPerformed
@@ -350,7 +350,7 @@ public class AgregarDVD extends javax.swing.JFrame {
             txtDuracion.setText("Ingrese duracion");
 
         if(txtTipo.getText().equals("") || txtTipo.getText() == null)
-            txtTipo.setText("Ingrese tipo material");
+            txtTipo.setText("Ingrese tipo material (DVD)");
     }//GEN-LAST:event_txtTitulodvdMousePressed
 
     private void txtTitulodvdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTitulodvdActionPerformed
@@ -376,7 +376,7 @@ public class AgregarDVD extends javax.swing.JFrame {
             txtDuracion.setText("Ingrese duracion");
 
         if(txtTipo.getText().equals("") || txtTipo.getText() == null)
-            txtTipo.setText("Ingrese tipo material");
+            txtTipo.setText("Ingrese tipo material (DVD)");
     }//GEN-LAST:event_txtDirectorMousePressed
 
     private void txtDirectorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDirectorActionPerformed
@@ -402,7 +402,7 @@ public class AgregarDVD extends javax.swing.JFrame {
             txtDuracion.setText("Ingrese duracion");
 
         if(txtTipo.getText().equals("") || txtTipo.getText() == null)
-            txtTipo.setText("Ingrese tipo material");
+            txtTipo.setText("Ingrese tipo material (DVD)");
     }//GEN-LAST:event_txtGeneroMousePressed
 
     private void txtGeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGeneroActionPerformed
@@ -428,7 +428,7 @@ public class AgregarDVD extends javax.swing.JFrame {
             txtGenero.setText("Ingrese genero");
 
         if(txtTipo.getText().equals("") || txtTipo.getText() == null)
-            txtTipo.setText("Ingrese tipo material");
+            txtTipo.setText("Ingrese tipo material (DVD)");
     }//GEN-LAST:event_txtDuracionMousePressed
 
     private void txtDuracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDuracionActionPerformed
@@ -442,7 +442,7 @@ public class AgregarDVD extends javax.swing.JFrame {
             || txtDirector.getText().equals("Ingrese director")
             || txtGenero.getText().equals("Ingrese genero")
             || txtDuracion.getText().equals("Ingrese duracion")
-            || txtTipo.getText().equals("Ingrese tipo material")){
+            || txtTipo.getText().equals("Ingrese tipo material (DVD)")){
             JOptionPane.showMessageDialog(this, "Debe llenar todos los campos \n", "AVISO", JOptionPane.INFORMATION_MESSAGE);
             txtIdDvd.requestFocus();
         } else {
@@ -543,7 +543,7 @@ public class AgregarDVD extends javax.swing.JFrame {
 
     private void txtTipoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTipoMousePressed
 
-        if(txtTipo.getText().equals("Ingrese tipo material"))
+        if(txtTipo.getText().equals("Ingrese tipo material (DVD)"))
             txtTipo.setText("");
 
         if(txtIdDvd.getText().equals("") || txtIdDvd.getText() == null)
