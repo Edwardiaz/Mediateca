@@ -32,7 +32,7 @@ public class EditarRev extends javax.swing.JFrame {
        Connection con = conn.getConnection();
        
        try{
-           String sql = "SELECT materiales.id, materiales.titulo, editoriales.nombre_editorial AS Editorial, materiales.periodicidad, materiales.fecha_publicacion, materiales.unidades_disponibles, tipo_material.tipo_material AS Tipo from materiales LEFT JOIN editoriales ON editoriales.id = materiales.codigo_editorial LEFT JOIN tipo_material ON tipo_material.id = materiales.codigo_tipo_material WHERE materiales.id ='"+codigo+"'";
+           String sql = "SELECT materiales.id, materiales.titulo, editoriales.nombre_editorial AS Editorial, materiales.periodicidad, date_format(fecha_publicacion, \"%d/%m/%Y\") as fecha_publicacion, materiales.unidades_disponibles, tipo_material.tipo_material AS Tipo from materiales LEFT JOIN editoriales ON editoriales.id = materiales.codigo_editorial LEFT JOIN tipo_material ON tipo_material.id = materiales.codigo_tipo_material WHERE materiales.id ='"+codigo+"'";
            ps = con.prepareStatement(sql);
            rs = ps.executeQuery();
            
