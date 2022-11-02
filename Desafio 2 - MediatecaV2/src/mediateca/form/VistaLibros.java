@@ -63,6 +63,11 @@ public class VistaLibros extends javax.swing.JFrame {
                 btnAtrasMousePressed(evt);
             }
         });
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 470, 90, 40));
 
         lblLibrosTabla.setBackground(new java.awt.Color(255, 255, 255));
@@ -92,6 +97,36 @@ public class VistaLibros extends javax.swing.JFrame {
         vista.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAtrasMousePressed
+
+    private void btnUpdateMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateMousePressed
+        try{
+            //verificamos si hay algun registro seleccionado, si no mostramos un error
+            if(this.tblLibros.getSelectionModel().isSelectionEmpty()){
+                JOptionPane.showMessageDialog(null,"Debe seleccionar un registro para poder actualizar datos!");
+            }
+            else{
+                //Seleccionamos numero de registro seleccionado
+                int linea = this.tblLibros.getSelectedRow();
+                int modelRow = tblLibros.convertRowIndexToModel(linea);
+                String s = tblLibros.getModel().getValueAt(modelRow, 0)+"";
+
+                EditarLibro libro = new EditarLibro(s);
+                libro.setVisible(true);
+                this.dispose();
+            }
+
+        } catch (SQLException e){
+            System.out.println("ERROR. " +e);
+        }
+    }//GEN-LAST:event_btnUpdateMousePressed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAtrasActionPerformed
 
     public void  mostrarDatos() throws SQLException{
         PreparedStatement ps = null;

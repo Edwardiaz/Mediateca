@@ -97,7 +97,18 @@ public class VistaCD extends javax.swing.JFrame {
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnAtrasActionPerformed
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnAtras1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAtras1MousePressed
+        // TODO add your handling code here:
+        ElegirVista vista = new ElegirVista();
+        vista.setVisible(true);
+        this.dispose();        
+    }//GEN-LAST:event_btnAtras1MousePressed
+
+    private void btnAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtras1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAtras1ActionPerformed
 
     
     public void mostrarCD () throws SQLException{
