@@ -52,7 +52,8 @@ public class Dashboard extends javax.swing.JFrame {
         btnActualizar = new javax.swing.JButton();
         btnMostrar = new javax.swing.JButton();
         btnBorrar = new javax.swing.JButton();
-        btnSolicitar = new javax.swing.JButton();
+        btnPrestar = new javax.swing.JButton();
+        btnDevolver = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         btnAgregar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -79,7 +80,7 @@ public class Dashboard extends javax.swing.JFrame {
                 btnActualizarMousePressed(evt);
             }
         });
-        pnlMenu.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 180, 49));
+        pnlMenu.add(btnActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 180, 49));
 
         btnMostrar.setBackground(new java.awt.Color(255, 255, 255));
         btnMostrar.setFont(new java.awt.Font("Century", 0, 12)); // NOI18N
@@ -91,7 +92,7 @@ public class Dashboard extends javax.swing.JFrame {
                 btnMostrarMousePressed(evt);
             }
         });
-        pnlMenu.add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 180, 49));
+        pnlMenu.add(btnMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 180, 49));
 
         btnBorrar.setBackground(new java.awt.Color(255, 255, 255));
         btnBorrar.setFont(new java.awt.Font("Century", 0, 12)); // NOI18N
@@ -103,26 +104,28 @@ public class Dashboard extends javax.swing.JFrame {
                 btnBorrarActionPerformed(evt);
             }
         });
-        pnlMenu.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 180, 49));
+        pnlMenu.add(btnBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 180, 49));
 
-        btnSolicitar.setBackground(new java.awt.Color(255, 255, 255));
-        btnSolicitar.setFont(new java.awt.Font("Century", 0, 12)); // NOI18N
-        btnSolicitar.setForeground(new java.awt.Color(51, 0, 153));
-        btnSolicitar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-prestar.png"))); // NOI18N
-        btnSolicitar.setText("Solicitar o Devolver");
-        btnSolicitar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSolicitarActionPerformed(evt);
-            }
-        });
-        pnlMenu.add(btnSolicitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 180, 49));
+        btnPrestar.setBackground(new java.awt.Color(255, 255, 255));
+        btnPrestar.setFont(new java.awt.Font("Century", 0, 12)); // NOI18N
+        btnPrestar.setForeground(new java.awt.Color(51, 0, 153));
+        btnPrestar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-prestar.png"))); // NOI18N
+        btnPrestar.setText("Solicitar material");
+        pnlMenu.add(btnPrestar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 180, 49));
+
+        btnDevolver.setBackground(new java.awt.Color(255, 255, 255));
+        btnDevolver.setFont(new java.awt.Font("Century", 0, 12)); // NOI18N
+        btnDevolver.setForeground(new java.awt.Color(51, 0, 153));
+        btnDevolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-devolver.png"))); // NOI18N
+        btnDevolver.setText("Devolver material");
+        pnlMenu.add(btnDevolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 180, 49));
 
         jButton9.setBackground(new java.awt.Color(255, 255, 255));
         jButton9.setFont(new java.awt.Font("Century", 0, 12)); // NOI18N
         jButton9.setForeground(new java.awt.Color(51, 0, 153));
         jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/btn-buscar.png"))); // NOI18N
         jButton9.setText("Buscar material");
-        pnlMenu.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 180, 49));
+        pnlMenu.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 180, 49));
 
         btnAgregar.setBackground(new java.awt.Color(255, 255, 255));
         btnAgregar.setFont(new java.awt.Font("Century", 0, 12)); // NOI18N
@@ -230,11 +233,6 @@ public class Dashboard extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnBorrarActionPerformed
 
-    private void btnSolicitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSolicitarActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_btnSolicitarActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -278,9 +276,10 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnBorrar;
+    private javax.swing.JButton btnDevolver;
     private javax.swing.JButton btnMostrar;
+    private javax.swing.JButton btnPrestar;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JButton btnSolicitar;
     private javax.swing.JButton jButton9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
