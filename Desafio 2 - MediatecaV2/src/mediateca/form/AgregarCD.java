@@ -227,7 +227,7 @@ public class AgregarCD extends javax.swing.JFrame {
 
         lblFecha.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblFecha.setForeground(new java.awt.Color(102, 0, 204));
-        lblFecha.setText("Duración");
+        lblFecha.setText("Duración (En minutos)");
         lblFecha.setName("lblFecha"); // NOI18N
         pnlAgregarMenu.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, -1, 20));
 
@@ -295,7 +295,7 @@ public class AgregarCD extends javax.swing.JFrame {
 
         txtTipo.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         txtTipo.setForeground(new java.awt.Color(102, 102, 102));
-        txtTipo.setText("Ingrese tipo material");
+        txtTipo.setText("Ingrese tipo material (CDA)");
         txtTipo.setAlignmentX(0.8F);
         txtTipo.setBorder(null);
         txtTipo.setMargin(new java.awt.Insets(5, 15, 5, 5));
@@ -387,7 +387,7 @@ public class AgregarCD extends javax.swing.JFrame {
             txtDisponible.setText("Ingrese cantidad");
 
         if(txtTipo.getText().equals("") || txtTipo.getText() == null)
-            txtTipo.setText("Ingrese tipo material");
+            txtTipo.setText("Ingrese tipo material (CDA)");
     }//GEN-LAST:event_txtIdCdMousePressed
 
     private void txtIdCdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdCdActionPerformed
@@ -423,7 +423,7 @@ public class AgregarCD extends javax.swing.JFrame {
             txtDisponible.setText("Ingrese cantidad");
 
         if(txtTipo.getText().equals("") || txtTipo.getText() == null)
-        txtTipo.setText("Ingrese tipo material");
+        txtTipo.setText("Ingrese tipo material (CDA)");
     }//GEN-LAST:event_txtTituloCdMousePressed
 
     private void txtTituloCdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTituloCdActionPerformed
@@ -455,7 +455,7 @@ public class AgregarCD extends javax.swing.JFrame {
             txtDisponible.setText("Ingrese cantidad");
 
         if(txtTipo.getText().equals("") || txtTipo.getText() == null)
-        txtTipo.setText("Ingrese tipo material");
+        txtTipo.setText("Ingrese tipo material (CDA)");
     }//GEN-LAST:event_txtArtistaMousePressed
 
     private void txtArtistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtArtistaActionPerformed
@@ -487,7 +487,7 @@ public class AgregarCD extends javax.swing.JFrame {
             txtDisponible.setText("Ingrese cantidad");
 
         if(txtTipo.getText().equals("") || txtTipo.getText() == null)
-        txtTipo.setText("Ingrese tipo material");
+        txtTipo.setText("Ingrese tipo material (CDA)");
     }//GEN-LAST:event_txtGeneroMousePressed
 
     private void txtGeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGeneroActionPerformed
@@ -519,7 +519,7 @@ public class AgregarCD extends javax.swing.JFrame {
             txtDisponible.setText("Ingrese cantidad");
 
         if(txtTipo.getText().equals("") || txtTipo.getText() == null)
-        txtTipo.setText("Ingrese tipo material");
+        txtTipo.setText("Ingrese tipo material (CDA)");
     }//GEN-LAST:event_txtDuracionMousePressed
 
     private void txtDuracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDuracionActionPerformed
@@ -551,7 +551,7 @@ public class AgregarCD extends javax.swing.JFrame {
             txtDisponible.setText("Ingrese cantidad");
 
         if(txtTipo.getText().equals("") || txtTipo.getText() == null)
-        txtTipo.setText("Ingrese tipo material");
+        txtTipo.setText("Ingrese tipo material (CDA)");
     }//GEN-LAST:event_txtCancionesMousePressed
 
     private void txtCancionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCancionesActionPerformed
@@ -566,7 +566,7 @@ public class AgregarCD extends javax.swing.JFrame {
             || txtGenero.getText().equals("Ingrese genero")|| txtCanciones.getText().equals("Ingrese canciones")
             || txtDuracion.getText().equals("Ingrese duracion")
             || txtDisponible.getText().equals("Ingrese cantidad")
-            || txtTipo.getText().equals("Ingrese tipo material")){
+            || txtTipo.getText().equals("Ingrese tipo material (CDA)")){
             JOptionPane.showMessageDialog(this, "Debe llenar todos los campos \n", "AVISO", JOptionPane.INFORMATION_MESSAGE);
             txtIdCd.requestFocus();
         } else {
@@ -678,7 +678,7 @@ public class AgregarCD extends javax.swing.JFrame {
 
     private void txtTipoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTipoMousePressed
 
-        if(txtTipo.getText().equals("Ingrese tipo material"))
+        if(txtTipo.getText().equals("Ingrese tipo material (CDA)"))
             txtTipo.setText("");
 
         if(txtIdCd.getText().equals("") || txtIdCd.getText() == null)
@@ -732,7 +732,7 @@ public class AgregarCD extends javax.swing.JFrame {
             txtCanciones.setText("Ingrese canciones");
 
         if(txtTipo.getText().equals("") || txtTipo.getText() == null)
-            txtTipo.setText("Ingrese tipo material");
+            txtTipo.setText("Ingrese tipo material (CDA)");
     }//GEN-LAST:event_txtDisponibleMousePressed
 
     private void txtDisponibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDisponibleActionPerformed

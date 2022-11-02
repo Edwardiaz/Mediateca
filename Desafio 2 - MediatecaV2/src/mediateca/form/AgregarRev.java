@@ -206,7 +206,7 @@ public class AgregarRev extends javax.swing.JFrame {
 
         txtFecha.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         txtFecha.setForeground(new java.awt.Color(102, 102, 102));
-        txtFecha.setText("Ingrese fecha");
+        txtFecha.setText("dia/mes/año");
         txtFecha.setAlignmentX(0.8F);
         txtFecha.setBorder(null);
         txtFecha.setMargin(new java.awt.Insets(5, 15, 5, 5));
@@ -294,7 +294,7 @@ public class AgregarRev extends javax.swing.JFrame {
 
         txtTipo.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         txtTipo.setForeground(new java.awt.Color(102, 102, 102));
-        txtTipo.setText("Ingrese tipo material");
+        txtTipo.setText("Ingrese tipo material (REVISTA)");
         txtTipo.setAlignmentX(0.8F);
         txtTipo.setBorder(null);
         txtTipo.setMargin(new java.awt.Insets(5, 15, 5, 5));
@@ -303,11 +303,6 @@ public class AgregarRev extends javax.swing.JFrame {
         txtTipo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 txtTipoMousePressed(evt);
-            }
-        });
-        txtTipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTipoActionPerformed(evt);
             }
         });
         pnlAgregarMenu.add(txtTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 290, 260, 30));
@@ -347,13 +342,13 @@ public class AgregarRev extends javax.swing.JFrame {
         txtPeriod.setText("Ingrese Periodicidad");
 
        if(txtFecha.getText().equals("") || txtFecha.getText() == null)
-        txtFecha.setText("Ingrese fecha");
+        txtFecha.setText("dia/mes/año");
 
        if(txtDisponible.getText().equals("") || txtDisponible.getText() == null)
         txtDisponible.setText("Ingrese cantidad");
 
        if(txtTipo.getText().equals("") || txtTipo.getText() == null)
-        txtTipo.setText("Ingrese tipo material");
+        txtTipo.setText("Ingrese tipo material (REVISTA)");
     }//GEN-LAST:event_txtIdrevMousePressed
 
     private void txtIdrevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdrevActionPerformed
@@ -380,13 +375,13 @@ public class AgregarRev extends javax.swing.JFrame {
             txtPeriod.setText("Ingrese Periodicidad");
 
        if(txtFecha.getText().equals("") || txtFecha.getText() == null)
-            txtFecha.setText("Ingrese fecha");
+            txtFecha.setText("dia/mes/año");
 
        if(txtDisponible.getText().equals("") || txtDisponible.getText() == null)
             txtDisponible.setText("Ingrese cantidad");
 
        if(txtTipo.getText().equals("") || txtTipo.getText() == null)
-            txtTipo.setText("Ingrese tipo material");
+            txtTipo.setText("Ingrese tipo material (REVISTA)");
     }//GEN-LAST:event_txtTituloRevistaMousePressed
 
     private void txtTituloRevistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTituloRevistaActionPerformed
@@ -409,13 +404,13 @@ public class AgregarRev extends javax.swing.JFrame {
             txtPeriod.setText("Ingrese Periodicidad");
 
         if(txtFecha.getText().equals("") || txtFecha.getText() == null)
-            txtFecha.setText("Ingrese fecha");
+            txtFecha.setText("dia/mes/año");
 
         if(txtDisponible.getText().equals("") || txtDisponible.getText() == null)
             txtDisponible.setText("Ingrese cantidad");
 
         if(txtTipo.getText().equals("") || txtTipo.getText() == null)
-            txtTipo.setText("Ingrese tipo material");
+            txtTipo.setText("Ingrese tipo material (REVISTA)");
     }//GEN-LAST:event_txtEditorialRevistaMousePressed
 
     private void txtEditorialRevistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEditorialRevistaActionPerformed
@@ -438,13 +433,13 @@ public class AgregarRev extends javax.swing.JFrame {
             txtEditorialRevista.setText("Ingrese editorial");
 
         if(txtFecha.getText().equals("") || txtFecha.getText() == null)
-            txtFecha.setText("Ingrese fecha");
+            txtFecha.setText("dia/mes/año");
 
         if(txtDisponible.getText().equals("") || txtDisponible.getText() == null)
             txtDisponible.setText("Ingrese cantidad");
 
         if(txtTipo.getText().equals("") || txtTipo.getText() == null)
-            txtTipo.setText("Ingrese tipo material");
+            txtTipo.setText("Ingrese tipo material (REVISTA)");
     }//GEN-LAST:event_txtPeriodMousePressed
 
     private void txtPeriodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPeriodActionPerformed
@@ -454,7 +449,7 @@ public class AgregarRev extends javax.swing.JFrame {
     private void txtFechaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFechaMousePressed
         // TODO add your handling code here:
 
-        if(txtFecha.getText().equals("Ingrese fecha"))
+        if(txtFecha.getText().equals("dia/mes/año"))
             txtFecha.setText("");
 
         if(txtIdrev.getText().equals("") || txtIdrev.getText() == null)
@@ -473,7 +468,7 @@ public class AgregarRev extends javax.swing.JFrame {
             txtDisponible.setText("Ingrese cantidad");
 
         if(txtTipo.getText().equals("") || txtTipo.getText() == null)
-            txtTipo.setText("Ingrese tipo material");
+            txtTipo.setText("Ingrese tipo material (REVISTA)");
     }//GEN-LAST:event_txtFechaMousePressed
 
     private void txtFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaActionPerformed
@@ -499,10 +494,10 @@ public class AgregarRev extends javax.swing.JFrame {
             txtPeriod.setText("Ingrese Periodicidad");
         
         if(txtFecha.getText().equals("") || txtFecha.getText() == null)
-            txtFecha.setText("Ingrese fecha");
+            txtFecha.setText("dia/mes/año");
 
         if(txtTipo.getText().equals("") || txtTipo.getText() == null)
-            txtTipo.setText("Ingrese tipo material");
+            txtTipo.setText("Ingrese tipo material (REVISTA)");
     }//GEN-LAST:event_txtDisponibleMousePressed
 
     private void txtDisponibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDisponibleActionPerformed
@@ -515,8 +510,8 @@ public class AgregarRev extends javax.swing.JFrame {
         if(txtIdrev.getText().equals("Ingrese ID de Revista") || txtTituloRevista.getText().equals("Ingrese título")
             || txtEditorialRevista.getText().equals("Ingrese editorial")
             || txtPeriod.getText().equals("Ingrese Periodicidad")|| txtDisponible.getText().equals("Ingrese cantidad")
-            || txtFecha.getText().equals("Ingrese fecha")
-            || txtTipo.getText().equals("Ingrese tipo material")){
+            || txtFecha.getText().equals("dia/mes/año")
+            || txtTipo.getText().equals("Ingrese tipo material (REVISTA)")){
             JOptionPane.showMessageDialog(this, "Debe llenar todos los campos \n", "AVISO", JOptionPane.INFORMATION_MESSAGE);
          txtIdrev.requestFocus();
         } else {
@@ -619,7 +614,7 @@ public class AgregarRev extends javax.swing.JFrame {
 
     private void txtTipoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTipoMousePressed
 
-        if(txtTipo.getText().equals("Ingrese tipo material"))
+        if(txtTipo.getText().equals("Ingrese tipo material (REVISTA)"))
             txtTipo.setText("");
 
         if(txtIdrev.getText().equals("") || txtIdrev.getText() == null)
@@ -641,10 +636,6 @@ public class AgregarRev extends javax.swing.JFrame {
             txtDisponible.setText("Ingrese cantidad");
 
     }//GEN-LAST:event_txtTipoMousePressed
-
-    private void txtTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTipoActionPerformed
 
     private void btnCancelarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarMousePressed
         // TODO add your handling code here:

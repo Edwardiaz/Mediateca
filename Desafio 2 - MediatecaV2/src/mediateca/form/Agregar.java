@@ -111,11 +111,6 @@ public class Agregar extends javax.swing.JFrame {
                 txtIdlibroMousePressed(evt);
             }
         });
-        txtIdlibro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIdlibroActionPerformed(evt);
-            }
-        });
         pnlAgregarMenu.add(txtIdlibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 260, 30));
 
         lblIdLibro.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -153,16 +148,8 @@ public class Agregar extends javax.swing.JFrame {
         txtTituloLibro.setMinimumSize(new java.awt.Dimension(5, 20));
         txtTituloLibro.setName("txtTituloLibro"); // NOI18N
         txtTituloLibro.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                txtTituloLibroMouseEntered(evt);
-            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 txtTituloLibroMousePressed(evt);
-            }
-        });
-        txtTituloLibro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTituloLibroActionPerformed(evt);
             }
         });
         pnlAgregarMenu.add(txtTituloLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 260, 30));
@@ -190,11 +177,6 @@ public class Agregar extends javax.swing.JFrame {
                 txtAutorLibroMousePressed(evt);
             }
         });
-        txtAutorLibro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAutorLibroActionPerformed(evt);
-            }
-        });
         pnlAgregarMenu.add(txtAutorLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 260, 30));
 
         lblAutorLibro.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -218,11 +200,6 @@ public class Agregar extends javax.swing.JFrame {
         txtPaginas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 txtPaginasMousePressed(evt);
-            }
-        });
-        txtPaginas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPaginasActionPerformed(evt);
             }
         });
         pnlAgregarMenu.add(txtPaginas, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 260, 30));
@@ -250,11 +227,6 @@ public class Agregar extends javax.swing.JFrame {
                 txtEditorialMousePressed(evt);
             }
         });
-        txtEditorial.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEditorialActionPerformed(evt);
-            }
-        });
         pnlAgregarMenu.add(txtEditorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, 260, 30));
 
         lblEditorial.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -278,11 +250,6 @@ public class Agregar extends javax.swing.JFrame {
         txtIsbn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 txtIsbnMousePressed(evt);
-            }
-        });
-        txtIsbn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIsbnActionPerformed(evt);
             }
         });
         pnlAgregarMenu.add(txtIsbn, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 90, 260, 30));
@@ -310,11 +277,6 @@ public class Agregar extends javax.swing.JFrame {
                 txtFechaMousePressed(evt);
             }
         });
-        txtFecha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFechaActionPerformed(evt);
-            }
-        });
         pnlAgregarMenu.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, 260, 30));
 
         lblFecha.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -338,11 +300,6 @@ public class Agregar extends javax.swing.JFrame {
         txtDisponible.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 txtDisponibleMousePressed(evt);
-            }
-        });
-        txtDisponible.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDisponibleActionPerformed(evt);
             }
         });
         pnlAgregarMenu.add(txtDisponible, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, 260, 30));
@@ -387,7 +344,7 @@ public class Agregar extends javax.swing.JFrame {
 
         txtTipo.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         txtTipo.setForeground(new java.awt.Color(102, 102, 102));
-        txtTipo.setText("Ingrese (LIBRO, DVD, CDA o REVISTA)");
+        txtTipo.setText("Ingrese tipo material (LIBRO)");
         txtTipo.setAlignmentX(0.8F);
         txtTipo.setBorder(null);
         txtTipo.setMargin(new java.awt.Insets(5, 15, 5, 5));
@@ -396,11 +353,6 @@ public class Agregar extends javax.swing.JFrame {
         txtTipo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 txtTipoMousePressed(evt);
-            }
-        });
-        txtTipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTipoActionPerformed(evt);
             }
         });
         pnlAgregarMenu.add(txtTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 330, 260, 30));
@@ -425,38 +377,6 @@ public class Agregar extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtIdlibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdlibroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIdlibroActionPerformed
-
-    private void txtTituloLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTituloLibroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTituloLibroActionPerformed
-
-    private void txtAutorLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAutorLibroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtAutorLibroActionPerformed
-
-    private void txtPaginasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPaginasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPaginasActionPerformed
-
-    private void txtEditorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEditorialActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEditorialActionPerformed
-
-    private void txtIsbnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIsbnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIsbnActionPerformed
-
-    private void txtFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFechaActionPerformed
-
-    private void txtDisponibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDisponibleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDisponibleActionPerformed
-
     private void txtIdlibroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtIdlibroMousePressed
         // TODO add your handling code here:
        if(txtIdlibro.getText().equals("Ingrese ID del Libro"))
@@ -475,21 +395,17 @@ public class Agregar extends javax.swing.JFrame {
         txtEditorial.setText("Ingrese nombre de editorial");
        
        if(txtIsbn.getText().equals("") || txtIsbn.getText() == null)
-        txtIsbn.setText("Ingrese ISBN");
+        txtIsbn.setText("Ingrese los 13 digitos del ISBN");
        
        if(txtFecha.getText().equals("") || txtFecha.getText() == null)
-        txtFecha.setText("Ingrese fecha");
+        txtFecha.setText("dia/mes/año");
        
        if(txtDisponible.getText().equals("") || txtDisponible.getText() == null)
         txtDisponible.setText("Ingrese cantidad"); 
        
        if(txtTipo.getText().equals("") || txtTipo.getText() == null)
-        txtTipo.setText("Ingrese tipo material");
+        txtTipo.setText("Ingrese tipo material (LIBRO)");
     }//GEN-LAST:event_txtIdlibroMousePressed
-
-    private void txtTituloLibroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTituloLibroMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTituloLibroMouseEntered
 
     private void txtTituloLibroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTituloLibroMousePressed
         
@@ -509,16 +425,16 @@ public class Agregar extends javax.swing.JFrame {
         txtEditorial.setText("Ingrese nombre de editorial");
        
        if(txtIsbn.getText().equals("") || txtIsbn.getText() == null)
-        txtIsbn.setText("Ingrese ISBN");
+        txtIsbn.setText("Ingrese los 13 digitos del ISBN");
        
        if(txtFecha.getText().equals("") || txtFecha.getText() == null)
-        txtFecha.setText("Ingrese fecha");
+        txtFecha.setText("dia/mes/año");
        
        if(txtDisponible.getText().equals("") || txtDisponible.getText() == null)
         txtDisponible.setText("Ingrese cantidad"); 
        
        if(txtTipo.getText().equals("") || txtTipo.getText() == null)
-        txtTipo.setText("Ingrese tipo material");
+        txtTipo.setText("Ingrese tipo material (LIBRO)");
     }//GEN-LAST:event_txtTituloLibroMousePressed
 
     private void txtAutorLibroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtAutorLibroMousePressed
@@ -539,16 +455,16 @@ public class Agregar extends javax.swing.JFrame {
         txtEditorial.setText("Ingrese nombre de editorial");
        
        if(txtIsbn.getText().equals("") || txtIsbn.getText() == null)
-        txtIsbn.setText("Ingrese ISBN");
+        txtIsbn.setText("Ingrese los 13 digitos del ISBN");
        
        if(txtFecha.getText().equals("") || txtFecha.getText() == null)
-        txtFecha.setText("Ingrese fecha");
+        txtFecha.setText("dia/mes/año");
        
        if(txtDisponible.getText().equals("") || txtDisponible.getText() == null)
         txtDisponible.setText("Ingrese cantidad"); 
        
        if(txtTipo.getText().equals("") || txtTipo.getText() == null)
-        txtTipo.setText("Ingrese tipo material");
+        txtTipo.setText("Ingrese tipo material (LIBRO)");
     }//GEN-LAST:event_txtAutorLibroMousePressed
 
     private void txtPaginasMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPaginasMousePressed
@@ -569,16 +485,16 @@ public class Agregar extends javax.swing.JFrame {
         txtEditorial.setText("Ingrese nombre de editorial");
        
        if(txtIsbn.getText().equals("") || txtIsbn.getText() == null)
-        txtIsbn.setText("Ingrese ISBN");
+        txtIsbn.setText("Ingrese los 13 digitos del ISBN");
        
        if(txtFecha.getText().equals("") || txtFecha.getText() == null)
-        txtFecha.setText("Ingrese fecha");
+        txtFecha.setText("dia/mes/año");
        
        if(txtDisponible.getText().equals("") || txtDisponible.getText() == null)
         txtDisponible.setText("Ingrese cantidad");
        
       if(txtTipo.getText().equals("") || txtTipo.getText() == null)
-        txtTipo.setText("Ingrese tipo material");
+        txtTipo.setText("Ingrese tipo material (LIBRO)");
     }//GEN-LAST:event_txtPaginasMousePressed
 
     private void txtEditorialMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtEditorialMousePressed
@@ -599,21 +515,21 @@ public class Agregar extends javax.swing.JFrame {
         txtPaginas.setText("Ingrese número de páginas");
        
        if(txtIsbn.getText().equals("") || txtIsbn.getText() == null)
-        txtIsbn.setText("Ingrese ISBN");
+        txtIsbn.setText("Ingrese los 13 digitos del ISBN");
        
        if(txtFecha.getText().equals("") || txtFecha.getText() == null)
-        txtFecha.setText("Ingrese fecha");
+        txtFecha.setText("dia/mes/año");
        
        if(txtDisponible.getText().equals("") || txtDisponible.getText() == null)
         txtDisponible.setText("Ingrese cantidad");
        
        if(txtTipo.getText().equals("") || txtTipo.getText() == null)
-        txtTipo.setText("Ingrese tipo material");
+        txtTipo.setText("Ingrese tipo material (LIBRO)");
     }//GEN-LAST:event_txtEditorialMousePressed
 
     private void txtIsbnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtIsbnMousePressed
         
-       if(txtIsbn.getText().equals("Ingrese ISBN"))
+       if(txtIsbn.getText().equals("Ingrese los 13 digitos del ISBN"))
         txtIsbn.setText(""); 
         
        if(txtIdlibro.getText().equals("") || txtIdlibro.getText() == null)
@@ -632,18 +548,18 @@ public class Agregar extends javax.swing.JFrame {
         txtEditorial.setText("Ingrese nombre de editorial");
        
        if(txtFecha.getText().equals("") || txtFecha.getText() == null)
-        txtFecha.setText("Ingrese fecha");
+        txtFecha.setText("dia/mes/año");
        
        if(txtDisponible.getText().equals("") || txtDisponible.getText() == null)
         txtDisponible.setText("Ingrese cantidad");
        
        if(txtTipo.getText().equals("") || txtTipo.getText() == null)
-        txtTipo.setText("Ingrese tipo material");
+        txtTipo.setText("Ingrese tipo material (LIBRO)");
     }//GEN-LAST:event_txtIsbnMousePressed
 
     private void txtFechaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFechaMousePressed
        
-       if(txtFecha.getText().equals("Ingrese fecha"))
+       if(txtFecha.getText().equals("dia/mes/año"))
         txtFecha.setText("");
           
        if(txtIdlibro.getText().equals("") || txtIdlibro.getText() == null)
@@ -662,13 +578,13 @@ public class Agregar extends javax.swing.JFrame {
         txtEditorial.setText("Ingrese nombre de editorial");
        
        if(txtIsbn.getText().equals("") || txtIsbn.getText() == null)
-        txtIsbn.setText("Ingrese ISBN");
+        txtIsbn.setText("Ingrese los 13 digitos del ISBN");
        
        if(txtDisponible.getText().equals("") || txtDisponible.getText() == null)
         txtDisponible.setText("Ingrese cantidad");
        
        if(txtTipo.getText().equals("") || txtTipo.getText() == null)
-        txtTipo.setText("Ingrese tipo material");
+        txtTipo.setText("Ingrese tipo material (LIBRO)");
     }//GEN-LAST:event_txtFechaMousePressed
 
     private void txtDisponibleMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtDisponibleMousePressed
@@ -692,23 +608,23 @@ public class Agregar extends javax.swing.JFrame {
         txtEditorial.setText("Ingrese nombre de editorial");
        
        if(txtIsbn.getText().equals("") || txtIsbn.getText() == null)
-        txtIsbn.setText("Ingrese ISBN");
+        txtIsbn.setText("Ingrese los 13 digitos del ISBN");
               
        if(txtFecha.getText().equals("") || txtFecha.getText() == null)
-        txtFecha.setText("Ingrese fecha");
+        txtFecha.setText("dia/mes/año");
        
        if(txtTipo.getText().equals("") || txtTipo.getText() == null)
-        txtTipo.setText("Ingrese tipo material");
+        txtTipo.setText("Ingrese tipo material (LIBRO)");
     }//GEN-LAST:event_txtDisponibleMousePressed
 
     private void btnAgregarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarMousePressed
         
         //Comprobar que los datos no sean nulos ni vaciós
         if(txtIdlibro.getText().equals("Ingrese ID del Libro") || txtTituloLibro.getText().equals("Ingrese Título")
-            || txtAutorLibro.getText().equals("Ingrese autor") || txtFecha.getText().equals("Ingrese fecha")
+            || txtAutorLibro.getText().equals("Ingrese autor") || txtFecha.getText().equals("dia/mes/año")
             || txtPaginas.getText().equals("Ingrese número de páginas")|| txtEditorial.getText().equals("Ingrese nombre de editorial")
             || txtIsbn.getText().equals("Ingrese ISBN (13 carácteres)")|| txtDisponible.getText().equals("Ingrese cantidad")
-            || txtTipo.getText().equals("Ingrese tipo material")){
+            || txtTipo.getText().equals("Ingrese tipo material (LIBRO)")){
             JOptionPane.showMessageDialog(this, "Debe llenar todos los campos \n", "AVISO",JOptionPane.INFORMATION_MESSAGE);
             txtIdlibro.requestFocus();
         } else { 
@@ -826,7 +742,7 @@ public class Agregar extends javax.swing.JFrame {
 
     private void txtTipoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTipoMousePressed
         
-       if(txtTipo.getText().equals("Ingrese tipo material"))
+       if(txtTipo.getText().equals("Ingrese tipo material (LIBRO)"))
         txtTipo.setText("");
         
        if(txtIdlibro.getText().equals("") || txtIdlibro.getText() == null)
@@ -845,19 +761,15 @@ public class Agregar extends javax.swing.JFrame {
         txtEditorial.setText("Ingrese nombre de editorial");
        
        if(txtIsbn.getText().equals("") || txtIsbn.getText() == null)
-        txtIsbn.setText("Ingrese ISBN");
+        txtIsbn.setText("Ingrese los 13 digitos del ISBN");
        
        if(txtFecha.getText().equals("") || txtFecha.getText() == null)
-        txtFecha.setText("Ingrese fecha");
+        txtFecha.setText("dia/mes/año");
        
        if(txtDisponible.getText().equals("") || txtDisponible.getText() == null)
         txtDisponible.setText("Ingrese cantidad"); 
         
     }//GEN-LAST:event_txtTipoMousePressed
-
-    private void txtTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTipoActionPerformed
 
     private void btnCancelarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarMousePressed
 
