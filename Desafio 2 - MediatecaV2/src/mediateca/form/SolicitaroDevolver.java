@@ -7,8 +7,7 @@ import java.util.logging.Logger;
 
 public class SolicitaroDevolver extends javax.swing.JFrame {
 
-    
-    public SolicitaroDevolver() {
+    public ElegirOpcion() {
         initComponents();
         this.setTitle("¿Qué desea Realizar?");
         this.setLocationRelativeTo(null);
@@ -35,8 +34,8 @@ public class SolicitaroDevolver extends javax.swing.JFrame {
         lblTituloNuevo.setBackground(new java.awt.Color(102, 0, 204));
         lblTituloNuevo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTituloNuevo.setForeground(new java.awt.Color(255, 255, 255));
-        lblTituloNuevo.setText("Elija la opcion que usted desea realizar");
-        jPanel1.add(lblTituloNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
+        lblTituloNuevo.setText("Elige la opción que deseas realizar");
+        jPanel1.add(lblTituloNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
 
         cbxOpciones.setFont(new java.awt.Font("Century", 0, 11)); // NOI18N
         cbxOpciones.setForeground(new java.awt.Color(102, 0, 102));
