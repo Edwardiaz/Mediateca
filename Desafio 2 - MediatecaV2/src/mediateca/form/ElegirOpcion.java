@@ -11,7 +11,6 @@ import javax.swing.JOptionPane;
  */
 public class ElegirOpcion extends javax.swing.JFrame {
 
-  
     public ElegirOpcion() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -19,7 +18,6 @@ public class ElegirOpcion extends javax.swing.JFrame {
         this.setSize(430, 260);
     }
 
- 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -37,7 +35,7 @@ public class ElegirOpcion extends javax.swing.JFrame {
         lblTituloNuevo.setBackground(new java.awt.Color(102, 0, 204));
         lblTituloNuevo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblTituloNuevo.setForeground(new java.awt.Color(255, 255, 255));
-        lblTituloNuevo.setText("Elige que tipo de material deseas ver");
+        lblTituloNuevo.setText("Elige la opción que deseas realizar");
         jPanel1.add(lblTituloNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
 
         cbxOpciones.setFont(new java.awt.Font("Century", 0, 11)); // NOI18N
@@ -69,7 +67,7 @@ public class ElegirOpcion extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
